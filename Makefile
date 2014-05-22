@@ -3,10 +3,18 @@ CFLAGS:= -I/usr/local/include
 CC := c++
 
 
-all:	thread
+all:	thread sharedmemread sharedmemwrite
 
 thread:	thread.cpp
 	$(CC) $(CFLAGS) $(LDFLAGS) thread.cpp -o thread
 
+sharedmemread:	sharedmemread.cpp
+	$(CC) $(CFLAGS) $(LDFLAGS) sharedmemread.cpp -o sharedmemread
+
+sharedmemwrite:	sharedmemwrite.cpp
+	$(CC) $(CFLAGS) $(LDFLAGS) sharedmemwrite.cpp -o sharedmemwrite
+
+
+
 clean:
-	rm thread
+	rm thread sharedmemread sharedmemwrite
