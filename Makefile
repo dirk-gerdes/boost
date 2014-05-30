@@ -1,9 +1,15 @@
-LDFLAGS:= -lboost_system -lboost_thread -lrt -L/usr/local/lib
+LDFLAGS:= -lboost_system -lboost_thread  -L/usr/local/lib
 CFLAGS:= -I/usr/local/include
+UNITFLAGS:= -lboost_unit_test_framework
 CC := c++
 
 
-all:	thread sharedmemread sharedmemwrite
+all:	unit_test thread sharedmemread sharedmemwrite
+
+
+
+unit_test:	unit_test.cpp
+	$(CC) $(CFLAGS) $(LDFLAGS) $(UNITFLAGS) unit_test.cpp -o unit_test
 
 thread:	thread.cpp
 	$(CC) $(CFLAGS) $(LDFLAGS) thread.cpp -o thread
