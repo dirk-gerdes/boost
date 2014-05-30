@@ -1,4 +1,4 @@
-LDFLAGS:= -lboost_system -lboost_thread -L/usr/local/lib
+LDFLAGS:= -lboost_system -lboost_thread -lrt -L/usr/local/lib
 CFLAGS:= -I/usr/local/include
 CC := c++
 
